@@ -6,7 +6,7 @@ module BB
     end
     
     post "/new" do
-      env['warden'].authenticate!(:password)
+      env['warden'].authenticate! :password
       redirect "/admin"
     end
     

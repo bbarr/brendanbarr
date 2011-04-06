@@ -3,7 +3,7 @@ require "bundler"
 Bundler.require
 
 # require warden_setup
-require File.join(File.dirname(__FILE__), "./warden_setup.rb")
+require File.join(File.dirname(__FILE__), "./strategies.rb")
 
 # require helpers
 require File.join(File.dirname(__FILE__), "./helpers.rb")
