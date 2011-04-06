@@ -1,12 +1,15 @@
+require 'digest/sha1'
+
 module BB
   class Admin < Base
     
-    before do
-      require_user
-    end
+    use Rack::Auth::Basic, "Admin Area" do |username, password|
+      u = Mote.db['users'].find_one
+      u['username'] == username and u['password'] == Digest::SHA1.hexdigest(password)
+  	end
     
     get "/" do
-      'admin index'
+      haml :"admin/index"
     end
     
   end
