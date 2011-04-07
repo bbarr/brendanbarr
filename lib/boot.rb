@@ -15,4 +15,4 @@ Dir.glob(File.join(File.dirname(__FILE__), "./apps/*.rb")) { |file| require file
 Dir.glob(File.join(File.dirname(__FILE__), "./models/*.rb")) { |file| require file }
 
 # setup mote with mongoDB connection
-Mote.db = Mongo::Connection.new.db("brendanbarr_#{Sinatra::Application.environment}", :pk => Mote::PkFactory)
+Mote.db = Mongo::Connection.new.db("brendanbarr", :pk => Mote::PkFactory)
