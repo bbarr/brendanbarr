@@ -1,0 +1,12 @@
+- content_for :content do
+  %h3 Create Post:
+
+  - if @errors
+    = @errors.inspect
+    
+  %form{ :class => 'admin', :method => 'POST', :action => '/admin/add' }
+    %label Title:
+    %input{ :type => 'text', :name => 'title' }
+    %label Content:
+    %textarea{ :name => 'content' }
+    %input{ :class => 'submit', :type => 'submit', :value => 'Create' }
