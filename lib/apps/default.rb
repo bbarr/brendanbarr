@@ -2,11 +2,8 @@ module BB
   class Default < Base
    
    get "/" do
-     'home'
-   end
-   
-   get "/hi-emily" do
-     'HAI EMILIIIEE'
+     @posts = Post.find
+     haml :"default/index"
    end
     
   end

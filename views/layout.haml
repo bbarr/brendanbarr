@@ -1,18 +1,22 @@
 !!!
 %html
-	%head
-		%link{ :rel => "stylesheet", :href => "/css/base.css" }
-	%body
-		#container
-			%header
-				%h1 Brendan Barr
-								
-			#content
-				= content :content
+  %head
+    %link{ :rel => "stylesheet", :href => "/css/base.css" }
+  %body
+    #container
+      %header
+        %h1= "Brendan Barr"
+        %p= "{ Ruby/Javascript Developer }"  
+			
+			%sidebar
+				
+				
+      #content
+        = content :content
 
-			%footer
+      %footer
 		
-		%script{ :type => "text/javascript", :src => "/js/jquery.js" }
-		%script{ :type => "text/javascript", :src => "/js/underscore.js" }
-		%script{ :type => "text/javascript", :src => "/js/bb.js" }
-		= content :js
+    %script{ :type => "text/javascript", :src => "/js/jquery.js" }
+    %script{ :type => "text/javascript", :src => "/js/underscore.js" }
+    %script{ :type => "text/javascript", :src => "/js/bb.js" }
+    = content :js

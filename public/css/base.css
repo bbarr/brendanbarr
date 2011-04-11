@@ -1,78 +1,93 @@
-* { margin: 0; padding: 0; }
+* {
+	margin: 0;
+	padding: 0;
+}
 
 #container {
-	width: 1024px;
-	margin: 0 auto;
-	font-family: Verdana, sans-serif;
-}
-
-#content {
-	margin: 20px;
-}
-
-h1 {
-	float: left;
-	font-size: 26px;
-	font-weight: normal;
+	width: 900px;
+	margin: 20px auto;
+	padding-bottom: 10px;
+	color: #222;
+	background: #eee;
+	font-family: Helvetica;
 }
 
 header {
-	background: #555;
-	color: #fff;
 	display: block;
-	overflow: hidden;
-	padding: 6px 20px;
+	border-top: 5px solid #bb0011;
+	border-bottom: 1px dashed #aaa;
+	height: 100px;
+	padding: 0 20px;
+	margin-bottom: 20px;
 }
 
-header ul {
-	float: right;
-	margin-top: 5px;
-	line-height: 1em;
-	font-size: 14px;
-}
-
-header li {
+li {
 	list-style: none;
-	float: left;
-	margin: 3px 0 0 10px;
 }
 
-header li a {
-	display: block;
-	padding: 3px 6px 5px;
-	margin-top: -3px;	
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	background: #fff;
-	color: #555;
-	text-decoration: none;
-}
-
-header li a:hover {
-	color: #000;
-}
-
-.module {
-	margin-top: 20px;
-}
-
-.module .head {
-	background: #555;
-	color: #fff;
-	padding: 5px 20px;
-	overflow: hidden;
-}
-
-.module .head h3 {
-	float: left;
-	font-size: 16px;
+h1 {
+	margin: 20px 0 0;
+	font-size: 40px;
+	letter-spacing: 1px;
+	line-height: 36px;
 	font-weight: normal;
 }
 
-.module .body {
-	border: 1px solid #555;
-	border-top: none;
-	padding: 5px 20px;
+header p {
+	color: #bb0011;
+	font-size:20px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+}
+
+#content {
+	padding: 0 20px;
+	margin-right: 240px;
+}
+
+#content.loading {
+	height: 100px;
+	background: url('/img/ajax-loader.gif') center no-repeat;
+}
+
+sidebar {
+	float: right;
+	display: inline;
+	margin: 0 20px;
+	width: 200px;
+}
+
+.post {
+	margin: 0 0 20px;
+	padding: 10px;
+}
+
+.post h3 {
+	color: #bb0011;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.post p {
+	margin: 0 0 10px;
+}
+
+footer {
+	padding: 0 20px;
+}
+
+footer ul {
+	float: right;
+}
+
+footer ul li {
+	float: left;
+	border-right: 1px solid #aaa;
+	padding: 0 5px;
+}
+
+footer ul li:last-child {
+	border: none;
 }
 
 form.admin {
