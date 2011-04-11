@@ -5,16 +5,16 @@
   %body
     #container
       %header
-        %h1= "Brendan Barr"
-        %p= "{ Ruby/Javascript Developer }"  
-			
-			%sidebar
-				
-				
+        = haml :"partials/header", :layout => false
+	
+      %sidebar
+        = haml :"partials/sidebar", :layout => false
+		
       #content
         = content :content
 
       %footer
+        = haml :"partials/footer", :layout => false
 		
     %script{ :type => "text/javascript", :src => "/js/jquery.js" }
     %script{ :type => "text/javascript", :src => "/js/underscore.js" }

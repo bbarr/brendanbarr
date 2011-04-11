@@ -1,0 +1,7 @@
+- if @categories
+  .content
+    %h4 Categories:
+    %ul{ :id => 'categories' }
+      - @categories.each do |c|
+        %li
+          %a{ :href => "/#{c}" }= c

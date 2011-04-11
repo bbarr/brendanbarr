@@ -7,7 +7,7 @@
 	width: 900px;
 	margin: 20px auto;
 	padding-bottom: 10px;
-	color: #222;
+	color: #333;
 	background: #eee;
 	font-family: Helvetica;
 }
@@ -18,11 +18,19 @@ header {
 	border-bottom: 1px dashed #aaa;
 	height: 100px;
 	padding: 0 20px;
-	margin-bottom: 20px;
 }
 
 li {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 h1 {
@@ -36,12 +44,31 @@ h1 {
 header p {
 	color: #bb0011;
 	font-size:20px;
-	margin-top: 5px;
+	margin: 5px 0 10px;
 	letter-spacing: 1px;
 }
 
+header ul {
+	float: right;
+	margin: 10px 0 0;
+}
+
+header li {
+	float: left;
+	margin-right: 10px;
+}
+
+header li a {
+	text-decoration: none;
+	color: #333;
+}
+
+header li a:hover {
+	text-decoration: underline;
+}
+
 #content {
-	padding: 0 20px;
+	padding: 20px 20px 0;
 	margin-right: 240px;
 }
 
@@ -53,13 +80,27 @@ header p {
 sidebar {
 	float: right;
 	display: inline;
-	margin: 0 20px;
-	width: 200px;
+	margin: 20px 20px 0;
+	width: 220px;
+}
+
+sidebar .content {
+	background: #fff;
+	margin: 0 0 10px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+sidebar .content h4 {
+	font-size: 16px;
+	margin-bottom: 3px;
 }
 
 .post {
-	margin: 0 0 20px;
+	margin: 0 0 10px;
 	padding: 10px;
+	background: #fff;
+	border-bottom: 2px dashed #ddd;
 }
 
 .post h3 {
@@ -68,12 +109,37 @@ sidebar {
 	margin-bottom: 10px;
 }
 
+.post h3 a {
+	color: #bb0011;
+	text-decoration: none;
+}
+
+.post h3 a:hover {
+	text-decoration: underline;
+}
+
+.post h3 span {
+	font-size: 12px;
+	color: #555;
+	display: block;
+	font-weight: normal;
+}
+
+.post div a {
+	color: #bb0011;
+	text-decoration: none;
+}
+
 .post p {
 	margin: 0 0 10px;
 }
 
 footer {
-	padding: 0 20px;
+	padding: 10px 20px 0;
+	margin-top: 20px;
+	border-top: 1px dashed #ccc;
+	display: block;
+	overflow: hidden;
 }
 
 footer ul {
@@ -84,6 +150,10 @@ footer ul li {
 	float: left;
 	border-right: 1px solid #aaa;
 	padding: 0 5px;
+}
+
+footer a {
+	color: #333;
 }
 
 footer ul li:last-child {

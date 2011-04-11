@@ -4,7 +4,7 @@
     - @posts.each do |p|
       %div
         %h4= p['title']
-        %div= p['content'][0..100]
+        %div= p['content'][0..100].chomp + "..."
         %a{ :href => "/admin/#{p['uri_title']}/edit" } Edit
         %form{ :action => "/admin/#{p['uri_title']}", :method => 'POST' }
           %input{ :type => 'hidden', :name => '_method', :value => 'DELETE'}
