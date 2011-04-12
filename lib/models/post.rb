@@ -17,8 +17,7 @@ class Post < Mote::Document
   end
   
   def format_date 
-    date_to_use = is_new? ? self['created_at'] : self['updated_at']
-    self['formatted_date'] = Date.parse(date_to_use.to_s).to_s
+    self['formatted_date'] = Date.parse(self['updated_at'].to_s).to_s
   end
   
 end

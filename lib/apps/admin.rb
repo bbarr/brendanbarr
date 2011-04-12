@@ -39,7 +39,7 @@ module BB
       updated_post = Post.new params
       post = Post.find_one :uri_title => params[:post]
       
-      ['title', 'uri_content', 'content'].each { |k| post[k] = updated_post[k] }       
+      ['title', 'uri_content', 'content', 'category'].each { |k| post[k] = updated_post[k] }       
       
       if post.save
         redirect "/admin"
