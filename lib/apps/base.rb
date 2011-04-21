@@ -1,3 +1,6 @@
+# All apps inheret from this class
+# Holds common config
+
 module BB
   class Base < ::Sinatra::Base
     
@@ -6,10 +9,6 @@ module BB
     set :public, File.join(File.dirname(__FILE__), '../../public/')
     
     helpers ::BB::Helpers
-    
-    def render_resource_or_404 page, condition
-      render
-    end
-    
+      
   end
 end

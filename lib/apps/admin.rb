@@ -1,3 +1,6 @@
+# App for all admin actions
+# Protected with HTTP basic auth, no need for user management
+
 require 'digest/sha1'
 
 module BB

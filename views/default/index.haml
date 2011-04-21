@@ -1,16 +1,13 @@
-- content_for :content do
+- @posts.each do |p|
   
-  - @posts.each do |p|
-    
-    .post
-      %h3
-        %a{ :href => "/#{p.category}/#{p.uri_title}" }
-          = p.title
-        %span= "#{p.category} | #{p.formatted_date}"
-      %div
-        - if p.content.size > 250
-          = p.content[0..250].chomp
-          %a{ :href => "/#{p.category}/#{p.uri_title}" }= " [...]"
-        - else
-          = p.content
-        
+  .post
+    %h3
+      %a{ :href => "/#{p.category}/#{p.uri_title}" }
+        = p.title
+      %span= "#{p.category} | #{p.formatted_date}"
+    %div
+      - if p.content.size > 250
+        = p.content[0..250].chomp
+        %a{ :href => "/#{p.category}/#{p.uri_title}" }= " [...]"
+      - else
+        = p.content

@@ -1,3 +1,5 @@
+# Handles requests for front-facing pages
+
 module BB
   class Default < Base
    

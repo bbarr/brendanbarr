@@ -11,7 +11,7 @@
         = haml :"partials/sidebar", :layout => false
 		
       #content
-        = content :content
+        = yield
 
       %footer
         = haml :"partials/footer", :layout => false
