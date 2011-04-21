@@ -6,5 +6,6 @@ module BB
     set :public, File.join(File.dirname(__FILE__), '../../public/')
     
     helpers ::BB::Helpers
+    
   end
 end

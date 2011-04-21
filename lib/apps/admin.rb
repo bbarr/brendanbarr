@@ -3,10 +3,11 @@ require 'digest/sha1'
 module BB
   class Admin < Base
     
+    # Protect entire controller
     use Rack::Auth::Basic, "Admin Area" do |username, password|
       u = Mote.db['users'].find_one
       u['username'] == username and u['password'] == Digest::SHA1.hexdigest(password)
-  	end
+    end
     
     get "/" do
       @posts = Post.all.to_a
@@ -19,12 +20,12 @@ module BB
     
     post "/add" do
       
-      @post = Post.new params
+      post = Post.new params
       
-      if @post.save
+      if post.save
         redirect "/admin"
       else
-        @errors = @post.errors
+        @errors = post.errors
         haml :"admin/add"
       end
     end
@@ -39,7 +40,8 @@ module BB
       updated_post = Post.new params
       post = Post.find_one :uri_title => params[:post]
       
-      ['title', 'uri_content', 'content', 'category'].each { |k| post[k] = updated_post[k] }       
+      # need to figure out how Mote handles updates, this is just a quick hack
+      ['title', 'uri_content', 'content', 'category'].each { |k| post[k] = updated_post[k] }
       
       if post.save
         redirect "/admin"
@@ -50,8 +52,8 @@ module BB
     end
    
     delete "/:post" do
-      @post = Post.find_one :uri_title => params[:post]      
-      Post.remove @post['_id'] unless @post.nil?
+      post = Post.find_one :uri_title => params[:post]      
+      Post.remove post['_id'] unless @post.nil?
       redirect "/admin"
     end
     
