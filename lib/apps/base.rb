@@ -7,5 +7,9 @@ module BB
     
     helpers ::BB::Helpers
     
+    def render_resource_or_404 page, condition
+      render
+    end
+    
   end
 end

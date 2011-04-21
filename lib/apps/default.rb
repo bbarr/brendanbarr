@@ -7,21 +7,14 @@ module BB
       haml :"default/index"
     end
     
-    get "/:category" do
-      @posts = Post.find(:category => params[:category]).to_a
-      
-      haml (@posts.size > 0 ? "default/index" : "default/404").to_sym
-        
+    get "/:category/?" do
+      @posts = Post.find(:category => params[:category]).to_a       
+      haml (@posts.size > 0 ? "default/index" : "default/404").to_sym  
     end
     
-    get "/:category/:post" do
+    get "/:category/:post/?" do
       @post = Post.find_one :uri_title => params[:post]
- 
-      if @post
-        haml :"default/post"
-      else
-        haml :"default/404"
-      end
+      haml (@post ? "default/post" : "default/404").to_sym
     end
 
   end
