@@ -3,7 +3,7 @@ module BB
    
     get "/" do
       @posts = Post.find.to_a
-      @categories = @posts.map { |p| p.category }.uniq unless @posts.size == 0
+      @categories = @posts.map { |p| p.category }.uniq
       haml :"default/index"
     end
     
