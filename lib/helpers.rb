@@ -1,4 +1,5 @@
 module BB
+  
   module Helpers
     
     # Render content that was stored in the content array with the given key
@@ -13,24 +14,5 @@ module BB
       @content[key] = capture_haml(&block)
     end
   end
-end
-
-module Mote
-  class Document
-    
-    class << self
-
-      def find_by_id id
-        self.find_one( { '_id' => id } )
-      end
-      
-    end
-    
-    
-    def get_id subject
-      return subject if subject.is_a? BSON::ObjectId
-      return subject['_id'] unless subject['_id'].nil?
-    end
-    
-  end
+  
 end
