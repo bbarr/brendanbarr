@@ -12,7 +12,7 @@ module BB
     #routes
     get "/" do
       cache_control :public, :max_age => 2592000 # set to same as default heroku asset cache
-      last_modified Date.new
+      etag 1, :weak
       array = [:blah, :index]
       haml array[rand(array.size)]
     end
