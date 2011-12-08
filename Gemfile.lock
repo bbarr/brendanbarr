@@ -1,11 +1,24 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    dalli (1.1.3)
     diff-lcs (1.1.2)
     haml (3.0.25)
+    jsmin (1.0.1)
     json (1.5.1)
+    memcached (1.3.5)
+    mime-types (1.17.2)
+    nokogiri (1.5.0)
     rack (1.2.2)
-    rack-flash (0.1.1)
+    rack-pagespeed (1.1.1)
+      dalli
+      jsmin
+      jsmin
+      memcached
+      mime-types
+      nokogiri
+      nokogiri
+      rack
       rack
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -28,7 +41,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   json
-  rack-flash
+  rack-pagespeed
   rspec
   shotgun
   sinatra

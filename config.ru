@@ -1,7 +1,10 @@
 require "./lib/boot.rb"
 
-use Rack::Session::Cookie
-use Rack::Flash
+use Rack::PageSpeed, :public => "public" do
+  store :disk => "public"
+  inline_css
+  combine_javascripts
+end
 
 map "/" do
 	run BB::Default

@@ -1,8 +1,8 @@
 source "http://rubygems.org"
 
 gem "sinatra"
-gem "rack-flash"
 gem "json"
 gem "haml"
+gem "rack-pagespeed"
 gem "shotgun", :group => :development
 gem "rspec", :group => :development
