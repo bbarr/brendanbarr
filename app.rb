@@ -9,10 +9,12 @@ module BB
     set :static, true
     set :public_folder, File.join(File.dirname(__FILE__), './public/')
     
+    before do
+      expires 2592000, :public
+    end
+    
     #routes
     get "/" do
-      cache_control :public, :max_age => 2592000 # set to same as default heroku asset cache
-      etag 1, :weak
       array = [:blah, :index]
       haml array[rand(array.size)]
     end
