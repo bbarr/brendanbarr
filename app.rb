@@ -11,6 +11,7 @@ module BB
     
     #routes
     get "/" do
+      response.headers['Cache-Control'] = 'public, max-age=300'
       haml :index
     end
     
