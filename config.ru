@@ -1,7 +1,5 @@
-require "./lib/boot.rb"
-
-
+require "./app.rb"
 
 map "/" do
-	run BB::Default
+	run BB::App
 end
