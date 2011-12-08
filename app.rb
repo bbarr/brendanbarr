@@ -11,7 +11,8 @@ module BB
     
     #routes
     get "/" do
-      response.headers['Cache-Control'] = 'public, max-age=300'
+      cache_control :public, :max_age => 43200 # set to same as default heroku asset cache
+      etag 1
       haml :index
     end
     
