@@ -1,3 +1,18 @@
+GIT
+  remote: git://github.com/juliocesar/rack-pagespeed.git
+  revision: a59d36d9be81a0288fa6d281e6532526b6dc3717
+  specs:
+    rack-pagespeed (1.1.1)
+      dalli
+      jsmin
+      jsmin
+      memcached
+      mime-types
+      nokogiri
+      nokogiri
+      rack
+      rack
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -10,16 +25,6 @@ GEM
     mime-types (1.17.2)
     nokogiri (1.5.0)
     rack (1.3.5)
-    rack-pagespeed (1.1.1)
-      dalli
-      jsmin
-      jsmin
-      memcached
-      mime-types
-      nokogiri
-      nokogiri
-      rack
-      rack
     rack-protection (1.1.4)
       rack
     rspec (2.7.0)
@@ -44,7 +49,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   json
-  rack-pagespeed (~> 1.1.1)
+  rack-pagespeed!
   rspec
   shotgun
   sinatra
