@@ -25,20 +25,55 @@
           For server-side work, I always lean towards Ruby and either MySQL or MongoDB. I have played around with Node, but I have yet to find 
           a good enough reason to use it for a project.
 
-      %section{ :id => 'projects' }
-      
+      %section{ :id => 'projects' }     
         %ul
-          - @projects.each do |p|
-            %li
-              .inner
-                %img
-                %h4= p['name']
-                %p= p['desc']
-                .links
-                  - p['links'].each do |name, url|
-                    %a{ :href => url, :class => 'external' }= name
-      
+          %li
+            .inner
+              %h4 
+                JSONEnforcer 
+                %span 
+                  %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
+              %p 
+                JSON format validation
+              %pre
+                :preserve
+                  var json = {
+                    a: 1,
+                    b: [ 'foo', 'bar' ]
+                  };
+            
+                  var template = {
+                    a: 'number required',
+                    b: [ 'string' ]
+                  };
+            
+                  template.enforce(json) //=> true
+
+              .toggle  
+              
+          %li
+            %h4 
+              HayMaker
+              %span
+                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
+            %p Lazy/Pre-loading for assets and AJAX requests        
+            
+          %li
+            %h4 
+              Gameling
+              %span
+                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
+            %p Canvas-based game library
+          %li
+            %h4 
+              MarkerJS
+              %span
+                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
+            %p Javascript HTML templates
+                
       %section{ :id => 'contact' }
     
     %script{ :src => '/js/jquery.js' } 
+    %script{ :src => '/js/gameling.js' }     
+    %script{ :src => '/js/balls.js' }         
     %script{ :src => '/js/bb.js' }

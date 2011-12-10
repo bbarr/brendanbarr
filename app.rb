@@ -15,10 +15,16 @@ module BB
     end
     
     get "/" do
-      projects = File.read(File.join(File.dirname(__FILE__), './public/json/projects.json'))
-      @projects = JSON.parse(projects)
       haml :index
     end
-    
+
+    get "/json-enforcer" do
+      haml :index
+    end
+
+    get "/marker" do
+      haml :index
+    end
+
   end
 end

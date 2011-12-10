@@ -4,13 +4,15 @@
       $projects = $('#projects'),
       $project_link = $('#project_link'),
       $bio_link = $('#bio_link'),
-      $bio = $('#bio');
+      $bio = $('#bio'),
+      app,
+      demo;
   
   $externals.each(function(i, a) {
     a.setAttribute('target', '_blank');
   });
 
-  var app = {
+  app = {
     
     default_page: 'projects',
     hash_prefix: '#/',
@@ -56,10 +58,33 @@
     },
     
     init: function() {
-      $(window).bind('hashchange', app.update)
+      $(window).bind('hashchange', app.update);
       app.update(true);
+      //demo.init();
     }
   };
+  
+  demo = {
+    
+    init: function() {
+      
+      var game = new GL.Game({ el: document.getElementById('demo') });
+      
+      game.stage('balls', new balls.Ball({
+        position: new GL.Vector(10, 10),
+        velocity: new GL.Vector(2, 1),
+        size: 5
+      }));
+          
+      game.stage('balls', new balls.Ball({
+        position: new GL.Vector(120, 10),
+        velocity: new GL.Vector(-1, 1),
+        size: 5
+      }));
+          
+      game.start();    
+    }
+  }
   
   app.init();
 })();
