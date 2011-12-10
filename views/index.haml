@@ -1,9 +1,44 @@
 !!! 5
 %html
   %head
-    %title= 'Brendan Barr - Web Development'
+    %title= 'Brendan Barr { Web Development }'
+    %link{ :href => '/css/base.css', :rel => 'stylesheet' }
   %body
-    hi
     
-    %script{ :src => '/js/jquery.js' }
+    %header        
+      %h1 
+        Brendan Barr
+        %span{ :class => 'title' }!= "<span>{</span> Javascript Developer <span>}</span>"
+      %nav
+        %a{ :href => '#/projects', :id => 'project_link' } projects      
+        %a{ :href => '#/bio', :id => 'bio_link' } bio
+        %a{ :href => 'http://github.com/bbarr', :class => 'external' } github        
+        %a{ :href => 'http://senselesslogic.com', :class => 'external' } blog
+    
+    #content
+
+      %section{ :id => 'bio' }
+        %p
+          I am a front-end web developer living in the New York area. Currently, I am employed as a Senior Open Standards Developer at R/GA, where I 
+          enjoy creating rich user-interfaces and experiences with javascript, HTML and CSS.
+        %p
+          For server-side work, I always lean towards Ruby and either MySQL or MongoDB. I have played around with Node, but I have yet to find 
+          a good enough reason to use it for a project.
+
+      %section{ :id => 'projects' }
+      
+        %ul
+          - @projects.each do |p|
+            %li
+              .inner
+                %img
+                %h4= p['name']
+                %p= p['desc']
+                .links
+                  - p['links'].each do |name, url|
+                    %a{ :href => url, :class => 'external' }= name
+      
+      %section{ :id => 'contact' }
+    
+    %script{ :src => '/js/jquery.js' } 
     %script{ :src => '/js/bb.js' }
