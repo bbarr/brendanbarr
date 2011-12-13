@@ -8,11 +8,25 @@ body {
   font-family: Courier, serif;
 }
 
+h2 {
+  background: #bb0011;
+  color: #fff;
+  float: left;
+  padding: 8px 15px 8px 12px;
+  margin: 0;
+}
+
 header {
 	border-top: 5px solid #bb0011;
   border-bottom: 1px dashed #aaa;
 	padding: 10px 20px;
 	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	z-index: 2;
 }
 
 li {
@@ -27,10 +41,6 @@ a {
 
 .hidden {
   display: none !important;
-}
-
-.translucent {
-  opacity: 0 !important;
 }
 
 a[target=_blank] {
@@ -72,44 +82,63 @@ nav a {
 
 a:hover,
 a.active {
-  border-bottom: 2px solid #333;
+  text-decoration: underline;
 }
 
 #content {
-  position: relative;
+  padding: 15px 20px;
+  margin-top: 100px;
 }
 
 section {
-  top: 10px;
-  left: 20px;
-  right: 20px;
-  bottom: 10px;
-  position: absolute;
-  background: #fff;
-  -moz-transition: opacity .2s;
+  border-left: 2px solid #bb0011;  
+  padding-bottom: 25px;
 }
 
 #bio {
   max-width: 800px;
-  z-index: 3;
 }
 
 #bio p {
-  margin: 0 0 15px;
   line-height: 20px;
+  clear: left;
+  font-size: 14px;
+  padding: 15px 12px 5px;
 }
 
 #projects {
-  z-index: 2;
+
+}
+
+#projects ul {
+  clear: left;
 }
 
 #projects li {
-  border: 1px solid #fff;
-  border-bottom: 1px solid #eee;
   overflow: hidden;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-    position: relative;
+  padding: 15px 0;
+  margin: 0 12px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #aaa;  
+}
+
+#projects ol {
+  font-size: 14px;
+}
+
+#projects strong {
+  font-size: 14px;
+  display: block;
+  font-weight: bold;
+}
+
+#projects ol li {
+  margin: 0;
+  padding: 2px 0;
+  list-style: disc inside;
+  overflow: visible;
+  border: none;
 }
 
 #projects h4 {
@@ -118,23 +147,29 @@ section {
 }
 
 #projects li .inner {
-  height: 50px;
   overflow: hidden;
   -moz-transition: height .5s;
 }
 
+#projects li:last-child .inner {
+  border: none;
+}
+
+#projects li:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+
 #projects h4 span {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
+  font-style: italic;
   line-height: 16px;
-  display: inline-block;
-  margin-left: 10px;
 }
 
 #projects p {
-  margin: 5px 0 5px;
-  font-size: 12px;
-  padding: 4px 2px;
+  margin: 8px 0;
+  font-size: 14px;
   overflow: hidden;
 }
 
@@ -161,4 +196,36 @@ section {
 
 #projects .links {
   margin: 20px 0 0;
+}
+
+#contact form {
+  clear: left;
+  padding: 15px 12px;
+}
+
+#contact form input {
+  display: block;
+  width: 400px;
+  padding: 4px 6px;
+  border: 1px solid #aaa;
+  font-size: 12px;
+  font-family: Courier, serif;
+}
+
+#contact form input[type=submit] {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 2px 0;
+  width: 50px;
+}
+
+#contact form textarea {
+  margin: 10px 0;
+  width: 400px;
+  padding: 4px 6px;
+  height: 100px;
+  border: 1px solid #aaa;
+  font-size: 12px;
+  font-family: Courier, serif;
 }

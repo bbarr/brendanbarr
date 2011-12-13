@@ -19,11 +19,11 @@ module BB
     end
 
     get "/json-enforcer" do
-      haml :index
+      haml :json_enforcer
     end
 
     get "/marker" do
-      haml :index
+      haml :marker
     end
 
   end

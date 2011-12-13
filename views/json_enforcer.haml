@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+  
+  %body
+    %pre
+      :preserve
+        var json = {
+          a: 1,
+          b: [ 'foo', 'bar' ]
+        };
+  
+        var template = {
+          a: 'number required',
+          b: [ 'string' ]
+        };
+  
+        template.enforce(json) //=> true

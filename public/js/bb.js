@@ -2,15 +2,14 @@
   
   var $externals = $('.external'),
       $projects = $('#projects'),
+      $contact = $('#contact'),
+      $window = $('html,body'),
       $project_link = $('#project_link'),
       $bio_link = $('#bio_link'),
+      $contact_link = $('#contact_link'),
+      $internals = $project_link.add($contact_link).add($bio_link),
       $bio = $('#bio'),
-      app,
-      demo;
-  
-  $externals.each(function(i, a) {
-    a.setAttribute('target', '_blank');
-  });
+      app;
 
   app = {
     
@@ -27,16 +26,19 @@
     
     pages: {
       bio: function(initial) {
-        $projects.addClass('translucent ' + ((initial) ? 'hidden' : ''));
-        $bio.removeClass('translucent hidden');
-        $project_link.removeClass('active');
-        $bio_link.addClass('active');        
+        $window.animate({ scrollTop: $bio.offset().top - 112 }, 1000);
+        $internals.removeClass('active');
+        $bio_link.addClass('active');
       },
       projects: function(initial) {
-        $bio.addClass('translucent ' + ((initial) ? 'hidden' : ''));      
-        $projects.removeClass('translucent hidden');
-        $bio_link.removeClass('active');
-        $project_link.addClass('active');        
+        $window.animate({ scrollTop: 0 }, 1000);        
+        $internals.removeClass('active');
+        $project_link.addClass('active');
+      },
+      contact: function(initial) {
+        $window.animate({ scrollTop: $contact.offset().top - 112 }, 1000);
+        $internals.removeClass('active');
+        $contact_link.addClass('active');        
       }
     },
     
@@ -48,8 +50,6 @@
     
       initial = typeof initial === 'boolean';    
           
-      if (name === app.current_page) return;    
-          
       if (name === '' || !pages[name]) name = app.default_page;
       
       app.current_page = name;
@@ -59,32 +59,18 @@
     
     init: function() {
       $(window).bind('hashchange', app.update);
+      $externals.each(function(i, a) {
+        a.setAttribute('target', '_blank');
+      });
+      $internals.click(function(e) {
+        var $this = $(this);
+        if ($this.attr('href') === location.hash) {
+          app.update();
+        }
+      });
       app.update(true);
-      //demo.init();
     }
   };
-  
-  demo = {
-    
-    init: function() {
-      
-      var game = new GL.Game({ el: document.getElementById('demo') });
-      
-      game.stage('balls', new balls.Ball({
-        position: new GL.Vector(10, 10),
-        velocity: new GL.Vector(2, 1),
-        size: 5
-      }));
-          
-      game.stage('balls', new balls.Ball({
-        position: new GL.Vector(120, 10),
-        velocity: new GL.Vector(-1, 1),
-        size: 5
-      }));
-          
-      game.start();    
-    }
-  }
   
   app.init();
 })();

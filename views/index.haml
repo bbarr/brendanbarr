@@ -12,67 +12,80 @@
       %nav
         %a{ :href => '#/projects', :id => 'project_link' } projects      
         %a{ :href => '#/bio', :id => 'bio_link' } bio
-        %a{ :href => 'http://github.com/bbarr', :class => 'external' } github        
+        %a{ :href => '#/contact', :id => 'contact_link' } contact
+        %a{ :href => 'http://github.com/bbarr', :class => 'external' } github
         %a{ :href => 'http://senselesslogic.com', :class => 'external' } blog
     
     #content
 
+      %section{ :id => 'projects' }     
+        %h2 Projects
+        %ul
+          %li
+            .inner
+              %h4 
+                JSONEnforcer
+                %span - JSON format validation
+              
+              %p
+                %a{ :href => 'http://json-enforcer.brendanbarr.com', :class => 'external' } website
+                %a{ :href => 'http://github.com/bbarr/jsonenforcer', :class => 'external' } code
+              
+              %ol
+                %li Validates JSON structure
+                %li Data-type checking
+                %li Generates randomized stubs for development
+                
+          %li
+            .inner
+              %h4 
+                HayMaker
+                %span - Lazy/Pre-loading for assets and AJAX requests  
+
+              %p
+                %a{ :href => 'http://github.com/bbarr/haymaker', :class => 'external' } code  
+              
+              %ol
+                %li Defers to higher-priority requests
+                %li Avoids caching urls multiple times
+
+          %li
+            .inner
+              %h4 
+                MarkerJS
+                %span - Javascript HTML templates
+
+              %p
+                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
+              
+              %ol
+                %li Chainable
+
+          %li
+            .inner
+              %h4
+                Gameling
+                %span - Canvas-based game library
+            
+              %p
+                %a{ :href => 'http://github.com/bbarr/gameling', :class => 'external' } code
+
       %section{ :id => 'bio' }
+        %h2 Bio
         %p
-          I am a front-end web developer living in the New York area. Currently, I am employed as a Senior Open Standards Developer at R/GA, where I 
+          I am a front-end web developer living in New York City. Currently, I am employed as a Senior Open Standards Developer at R/GA, where I 
           enjoy creating rich user-interfaces and experiences with javascript, HTML and CSS.
         %p
           For server-side work, I always lean towards Ruby and either MySQL or MongoDB. I have played around with Node, but I have yet to find 
           a good enough reason to use it for a project.
 
-      %section{ :id => 'projects' }     
-        %ul
-          %li
-            .inner
-              %h4 
-                JSONEnforcer 
-                %span 
-                  %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
-              %p 
-                JSON format validation
-              %pre
-                :preserve
-                  var json = {
-                    a: 1,
-                    b: [ 'foo', 'bar' ]
-                  };
-            
-                  var template = {
-                    a: 'number required',
-                    b: [ 'string' ]
-                  };
-            
-                  template.enforce(json) //=> true
-
-              .toggle  
-              
-          %li
-            %h4 
-              HayMaker
-              %span
-                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
-            %p Lazy/Pre-loading for assets and AJAX requests        
-            
-          %li
-            %h4 
-              Gameling
-              %span
-                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
-            %p Canvas-based game library
-          %li
-            %h4 
-              MarkerJS
-              %span
-                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
-            %p Javascript HTML templates
-                
       %section{ :id => 'contact' }
-    
+        %h2 Contact
+        %form{ :action => '', :method => 'POST' }
+          %input{ :placeholder => 'Email' }
+          %textarea{ :placeholder => 'Message' }
+          %input{ :type => 'submit', :value => 'Send' }
+
     %script{ :src => '/js/jquery.js' } 
     %script{ :src => '/js/gameling.js' }     
     %script{ :src => '/js/balls.js' }         
