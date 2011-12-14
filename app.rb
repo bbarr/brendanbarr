@@ -15,11 +15,12 @@ module BB
     end
     
     get "/" do
-      puts request.subdomain.nil?
-      if request.subdomain.nil?
-        haml :index
-      end
-      haml request.subdomain.to_sym
+      haml :index
+      # puts request.subdomain.nil?
+      # if request.subdomain.nil?
+      #   
+      # end
+      # haml request.subdomain.to_sym
     end
   end
 end
