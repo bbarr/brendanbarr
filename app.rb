@@ -16,7 +16,7 @@ module BB
     
     get "/" do
       unless request.subdomains.empty?
-        redirect '/' + request.subdomains.first
+        haml request.subdomains.first.to_sym
       end
       haml :index
     end
