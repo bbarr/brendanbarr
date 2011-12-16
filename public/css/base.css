@@ -229,3 +229,21 @@ section {
   font-size: 12px;
   font-family: Courier, serif;
 }
+
+#demo {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid #aaa;
+}
+
+.instructions {
+  top: 5px;
+  left: 0;
+  position: absolute;
+  background: #aaa;
+  color: #fff;
+  font-size: 10px;
+  line-height: 10px;
+}

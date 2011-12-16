@@ -167,6 +167,8 @@ GL.Stage.prototype = {
   remove: function(o) {
     var found = this.find(o.id);
     this.pieces.splice(found.index, 1);
+    found = this.find.call(this.game, o.id);
+    this.game.pieces.splice(found.index, 1);
   },
 
   find: function(id) {
@@ -295,6 +297,7 @@ GL.Vector.prototype = {
   reverse: function() {
     this.x *= -1;
     this.y *= -1;
+    return this;
   },
 
   normalize: function() {
@@ -346,6 +349,10 @@ GL.Vector.prototype = {
   
   to_string: function() {
     return 'Vector: ' + this.x + ', ' + this.y;
+  },
+
+  is_stationary: function() {
+    return this.x > 0 || this.y > 0;
   }
 
 };
@@ -383,18 +390,29 @@ GL.COLLISIONS = {
   
   affect: function(o) {
     
-    var diff = this.position.get_difference(o.position).normalize(),
-        this_tangent = this.velocity.clone().dot(diff),
-        o_tangent = o.velocity.clone().dot(diff);
+    var diff = this.position.get_difference(o.position),
+        diff_norm = diff.normalize();
+
+    // adjust back to collision point
+    var adjustee = this.velocity.get_length() < o.velocity.get_length() ? o : this,
+        adjust = adjustee.velocity
+          .clone()
+          .reverse()
+          .normalize();
+
+    while ((o.size + this.size) > this.position.get_difference(o.position).get_length()) {
+      adjustee.position.add(adjust);
+    }
+          
+    var this_tangent = this.velocity.clone().dot(diff_norm),
+        o_tangent = o.velocity.clone().dot(diff_norm);      
 
     this.velocity
-      .add(diff.clone().scale(o_tangent - this_tangent).scale(o.size / this.size))
+      .add(diff_norm.clone().scale(o_tangent - this_tangent).scale(o.size / this.size))
       .scale(this.elasticity);
       
     o.velocity
-      .add(diff.clone().scale(this_tangent - o_tangent).scale(this.size / o.size))
+      .add(diff_norm.clone().scale(this_tangent - o_tangent).scale(this.size / o.size))
       .scale(this.elasticity);
   }
 };
-
-GL.BOUNDRIES = {};

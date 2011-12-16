@@ -9,7 +9,7 @@
       $contact_link = $('#contact_link'),
       $internals = $project_link.add($contact_link).add($bio_link),
       $bio = $('#bio'),
-      app;
+      app, demo;
 
   app = {
     
@@ -69,8 +69,39 @@
         }
       });
       app.update(true);
+      demo.init();
     }
   };
+  
+  demo = {
+    
+    init: function() {
+      var game = new balls.Game({ el: document.getElementById('demo') });
+      game.stage('balls', new balls.Ball({
+        size: 5,
+        position: new GL.Vector(0, 0),
+        velocity: new GL.Vector(1, 1)
+      }));
+      game.stage('balls', new balls.Ball({
+        size: 5,
+        position: new GL.Vector(0, 100),
+        velocity: new GL.Vector(-1, 1)
+      }));
+      game.stage('balls', new balls.Ball({
+        size: 5,
+        position: new GL.Vector(80, 100),
+        velocity: new GL.Vector(-1, -2)
+      }));
+      
+      game.stages.balls.canvas.addEventListener('click', function(e) {
+        var g = new balls.G(e.layerX, e.layerY);
+        game.stage('balls', g);
+      });
+      
+      game.start();
+      
+    }
+  }
   
   app.init();
 })();
