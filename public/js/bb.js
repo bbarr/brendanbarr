@@ -69,7 +69,7 @@
         }
       });
       app.update(true);
-      demo.init();
+      //demo.init();
     }
   };
   
