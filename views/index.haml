@@ -5,36 +5,37 @@
     %link{ :href => '/css/base.css', :rel => 'stylesheet' }
   %body
     
-    %header        
+    %header
       %h1 
         Brendan Barr
         %span{ :class => 'title' }!= "<span>{</span> Javascript Developer <span>}</span>"
       %nav
-        %a{ :href => '#/projects', :id => 'project_link' } projects      
+        %a{ :href => '#/projects', :id => 'project_link' } projects
         %a{ :href => '#/bio', :id => 'bio_link' } bio
         -#%a{ :href => '#/contact', :id => 'contact_link' } contact
         %a{ :href => 'http://github.com/bbarr', :class => 'external' } github
         %a{ :href => 'http://www.senselesslogic.com', :class => 'external' } blog
-    
+
     #content
 
       %section{ :id => 'projects' }     
         %h2 Projects
-        %ul
+        %ul                
           %li
             .inner
               %h4 
-                JSONEnforcer
-                %span - JSON format validation
-              
+                MarkerJS
+                %span - Javascript HTML templates
+
               %p
-                %a{ :href => 'http://github.com/bbarr/jsonenforcer', :class => 'external' } code
+                %a{ :href => 'http://www.senselesslogic.com/2012/01/19/marker-html-templates/', :class => 'external' } website
+                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
               
               %ol
-                %li Validates JSON structure
-                %li Data-type checking
-                %li Generates randomized stubs for development
-                
+                %li Chainable, HTML construction
+                %li Supports reusable code via .partials()
+                %li Conditionals and iterations
+
           %li
             .inner
               %h4 
@@ -51,15 +52,16 @@
           %li
             .inner
               %h4 
-                MarkerJS
-                %span - Javascript HTML templates
+                JSONEnforcer
+                %span - JSON format validation
 
               %p
-                %a{ :href => 'http://github.com/bbarr/Marker', :class => 'external' } code
-              
+                %a{ :href => 'http://github.com/bbarr/jsonenforcer', :class => 'external' } code
+
               %ol
-                %li Chainable, HTML construction
-                %li Supports reusable code via .partials()
+                %li Validates JSON structure
+                %li Data-type checking
+                %li Generates randomized stubs for development
 
           %li
             .inner
