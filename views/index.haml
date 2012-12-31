@@ -1,18 +1,17 @@
 !!! 5
 %html
   %head
-    %title= 'Brendan Barr { Web Development }'
+    %title= 'Brendan Barr { Web Developer }'
     %link{ :href => '/css/base.css', :rel => 'stylesheet' }
   %body
     
     %header
       %h1 
         Brendan Barr
-        %span{ :class => 'title' }!= "<span>{</span> Javascript Developer <span>}</span>"
+        %span{ :class => 'title' }!= "<span>{</span> Web Developer <span>}</span>"
       %nav
         %a{ :href => '#/projects', :id => 'project_link' } projects
         %a{ :href => '#/bio', :id => 'bio_link' } bio
-        -#%a{ :href => '#/contact', :id => 'contact_link' } contact
         %a{ :href => 'http://github.com/bbarr', :class => 'external' } github
         %a{ :href => 'http://www.senselesslogic.com', :class => 'external' } blog
 
@@ -21,6 +20,20 @@
       %section{ :id => 'projects' }     
         %h2 Projects
         %ul                
+          %li
+            .inner
+              %h4 
+                Dataful.me (In Development)
+                %span - Self-tracking and analysis
+
+              %p
+                %a{ :href => 'http://dataful.herokuapp.com/', :class => 'external' } website
+                %a{ :href => 'http://github.com/bbarr/dataful.me', :class => 'external' } code
+              
+              %ol
+                %li Track anything as a series of tags (key or key:value)
+                %li Define stats, such as "average miles (running) 1h after eating"
+
           %li
             .inner
               %h4 
@@ -65,8 +78,8 @@
 
           %li
             .inner
-              -# #demo{ :height => '100', :width => '100' }
-              -# .instructions click for gravity
+              -#demo{ :height => '100', :width => '100' }
+              -#.instructions click for gravity
               %h4
                 Gameling
                 %span - Canvas-based game library
@@ -81,11 +94,12 @@
       %section{ :id => 'bio' }
         %h2 Bio
         %p
-          I am a front-end web developer living in New York City. Currently, I am employed as a Senior Open Standards Developer at R/GA, where I 
-          enjoy creating rich user-interfaces and experiences with javascript, HTML and CSS.
+          I am a freelance web developer living in the Boston-Metro area, where I enjoy 
+          working remotely with teams to create rich user-experiences with Ruby and Javascript.
         %p
-          For server-side work, I always lean towards Ruby and either MySQL or MongoDB. I have played around with Node, but I have yet to find 
-          a good enough reason to use it for a project.
+          In my spare time, I try to remember how to play guitar and dabble a bit in game design. One day, I would like to launch a wildly successful start-up.
+        %p
+          Currently, I am available for work on a freelance basis.
 
       -#%section{ :id => 'contact' }
         -#%h2 Contact
