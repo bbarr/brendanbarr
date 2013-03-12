@@ -11,9 +11,14 @@ body {
 h2 {
   background: #bb0011;
   color: #fff;
-  float: left;
-  padding: 8px 15px 8px 12px;
-  margin: 0;
+  padding: 8px 0 8px 0;
+  width: 200px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+section {
+  padding: 20px 0;
 }
 
 header {
@@ -123,22 +128,26 @@ section {
   border-bottom: 1px solid #aaa;  
 }
 
-#projects ol {
+#projects ol, #work li li {
   font-size: 14px;
 }
 
 #projects strong {
   font-size: 14px;
-  display: block;
   font-weight: bold;
 }
 
-#projects ol li {
+#projects ol li, #work li li {
   margin: 0;
   padding: 2px 0;
   list-style: disc inside;
   overflow: visible;
   border: none;
+}
+
+#work ul {
+  clear: left;
+  padding: 10px;
 }
 
 #projects h4 {
@@ -148,7 +157,6 @@ section {
 
 #projects li .inner {
   overflow: hidden;
-  -moz-transition: height .5s;
 }
 
 #projects li:last-child .inner {
