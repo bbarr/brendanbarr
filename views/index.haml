@@ -11,7 +11,7 @@
         %span{ :class => 'title' }!= "<span>{</span> Web Developer <span>}</span>"
       %nav
         %a{ :href => '#/projects', :id => 'project_link' } projects
-        %a{ :href => '#/work', :id => 'past_work' } work
+        %a{ :href => '#/work', :id => 'work_link' } work
         %a{ :href => '#/bio', :id => 'bio_link' } bio
         %a{ :href => 'http://github.com/bbarr', :class => 'external' } github
         %a{ :href => 'http://www.senselesslogic.com', :class => 'external' } blog
@@ -99,24 +99,27 @@
         %h2 Work
         %ul
           %li 
-            %strong Cignium Technologies 
-            (November 2012 - present)
-            %ul
-              %li Develop features for application built in Knockout.js
-              %li Built functional testing framework leveraging Phantom/CasperJS
+            .inner
+              %strong Cignium Technologies 
+              (November 2012 - present)
+              %ul
+                %li Develop features for application built in Knockout.js
+                %li Built functional testing framework leveraging Phantom/CasperJS
 
           %li 
-            %strong howaboutwe.com
-            (March 2012 - October 2012)
-            %ul
-              %li Developed across full-stack to develop features in Rails and Javascript.
-              %li Helped refactor a Backbone.js mobile site
+            .inner
+              %strong howaboutwe.com
+              (March 2012 - October 2012)
+              %ul
+                %li Developed across full-stack to develop features in Rails and Javascript.
+                %li Helped refactor a Backbone.js mobile site
 
           %li
-            %strong R/GA (NY)
-            (September 2011 - February 2012)
-            %ul
-              %li Worked on new Nike Plus website, mostly for running activity views/graphs.
+            .inner
+              %strong R/GA (NY)
+              (September 2011 - February 2012)
+              %ul
+                %li Worked on new Nike Plus website, mostly for running activity views/graphs.
 
       %section{ :id => 'bio' }
         %h2 Bio

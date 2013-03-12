@@ -6,8 +6,8 @@
       $window = $('html,body'),
       $project_link = $('#project_link'),
       $bio_link = $('#bio_link'),
-      $contact_link = $('#contact_link'),
-      $internals = $project_link.add($contact_link).add($bio_link),
+      $contact_link = $('#work_link'),
+      $internals = $project_link.add($contact_link).add($bio_link).add($work_link),
       $bio = $('#bio'),
       app, demo;
 
@@ -35,10 +35,10 @@
         $internals.removeClass('active');
         $project_link.addClass('active');
       },
-      contact: function(initial) {
-        $window.animate({ scrollTop: $contact.offset().top - 112 }, 1000);
+      work: function(initial) {
+        $window.animate({ scrollTop: $work.offset().top - 112 }, 1000);
         $internals.removeClass('active');
-        $contact_link.addClass('active');        
+        $work_link.addClass('active');        
       }
     },
     
