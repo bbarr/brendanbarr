@@ -11,6 +11,7 @@
         %span{ :class => 'title' }!= "<span>{</span> Web Developer <span>}</span>"
       %nav
         %a{ :href => '#/projects', :id => 'project_link' } projects
+        %a{ :href => '#/work', :id => 'past_work' } work
         %a{ :href => '#/bio', :id => 'bio_link' } bio
         %a{ :href => 'http://github.com/bbarr', :class => 'external' } github
         %a{ :href => 'http://www.senselesslogic.com', :class => 'external' } blog
@@ -33,6 +34,10 @@
                 %li Define a problem, and then share it with whoever is in the best position to recommend an answer. People contribute and vote.
                 %li Hopefully replaces those long "which library should we use for X" discussions or email threads where you end up going in circles.
 
+              %p
+                %strong Technology: 
+                Backbone.js and Rivets.js with a Ruby/Sinatra JSON API backed by MongoDB
+
           %li
             .inner
               %h4 
@@ -46,20 +51,6 @@
                 %li Can help create a simple ViewModel/Exhibit/Presenter/etc layer for your Javascript Application.
                 %li RegExp matching for delegation targets
                 %li ECMA5 setters/getters to allow transparent property delegation.
-
-          %li
-            .inner
-              %h4 
-                dataful.me (Not being actively developed at this point)
-                %span - Self-tracking and analysis
-
-              %p
-                %a{ :href => 'http://dataful.herokuapp.com/', :class => 'external' } website
-                %a{ :href => 'http://github.com/bbarr/dataful.me', :class => 'external' } code
-              
-              %ol
-                %li Track anything as a series of tags (key or key:value)
-                %li Define stats, such as "average miles (running) 1h after eating"
 
           %li
             .inner
@@ -89,6 +80,43 @@
                 %li Chainable, HTML construction
                 %li Supports reusable code via .partials()
                 %li Conditionals and iterations
+
+          %li
+            .inner
+              %h4 
+                dataful.me (Not actively developed, currently)
+                %span - Self-tracking and analysis
+
+              %p
+                %a{ :href => 'http://dataful.herokuapp.com/', :class => 'external' } website
+                %a{ :href => 'http://github.com/bbarr/dataful.me', :class => 'external' } code
+              
+              %ol
+                %li Track anything as a series of tags (key or key:value)
+                %li Define stats, such as "average miles (running) 1h after eating"
+
+      %section{ :id => 'work' }
+        %h2 Work
+        %ul
+          %li 
+            %strong Cignium Technologies 
+            (November 2012 - present)
+            %ul
+              %li Develop features for application built in Knockout.js
+              %li Built functional testing framework leveraging Phantom/CasperJS
+
+          %li 
+            %strong howaboutwe.com
+            (March 2012 - October 2012)
+            %ul
+              %li Developed across full-stack to develop features in Rails and Javascript.
+              %li Helped refactor a Backbone.js mobile site
+
+          %li
+            %strong R/GA (NY)
+            (September 2011 - February 2012)
+            %ul
+              %li Worked on new Nike Plus website, mostly for running activity views/graphs.
 
       %section{ :id => 'bio' }
         %h2 Bio
