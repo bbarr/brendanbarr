@@ -2,12 +2,12 @@
   
   var $externals = $('.external'),
       $projects = $('#projects'),
-      $contact = $('#contact'),
+      $work = $('#work'),
       $window = $('html,body'),
       $project_link = $('#project_link'),
       $bio_link = $('#bio_link'),
       $work_link = $('#work_link'),
-      $internals = $project_link.add($contact_link).add($bio_link).add($work_link),
+      $internals = $project_link.add($bio_link).add($work_link),
       $bio = $('#bio'),
       app, demo;
 
